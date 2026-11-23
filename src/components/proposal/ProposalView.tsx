@@ -343,16 +343,38 @@ export function ProposalView() {
 
         {/* 2. Cómo se Conectan las Partes */}
         <section className="border-border bg-surface rounded-[var(--radius-card)] border p-6 shadow-[var(--shadow-card)] sm:p-8 print:shadow-none">
-          <p className="text-secondary text-xs font-bold tracking-wider uppercase">Sección 2</p>
-          <h2 className="font-display text-ink mt-1 text-2xl font-extrabold">
-            Cómo se Conectan las Partes (Flujo Operativo y Contable)
-          </h2>
-          <p className="text-ink-muted mt-1 text-sm">
-            Así circula cada pedido desde que el vecino entra a la web hasta que emites la boleta
-            electrónica SII en mostrador:
-          </p>
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p className="text-secondary text-xs font-bold tracking-wider uppercase">Sección 2</p>
+              <h2 className="font-display text-ink mt-1 text-2xl font-extrabold">
+                Cómo se Conectan las Partes (Flujo Operativo y Contable)
+              </h2>
+              <p className="text-ink-muted mt-1 text-sm">
+                Así circula cada pedido desde que el vecino entra a la web hasta que emites la
+                boleta electrónica SII en mostrador:
+              </p>
+            </div>
+            <a
+              href="/diagrams/flujo-farmacias-vertical.html?theme=light"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-border bg-surface-muted text-secondary hover:bg-surface inline-flex items-center gap-1.5 rounded-[var(--radius-control)] border px-3 py-1.5 text-xs font-semibold print:hidden"
+            >
+              Abrir diagrama en pantalla completa
+              <ExternalLink className="h-3.5 w-3.5" />
+            </a>
+          </div>
 
-          <div className="mt-6 grid gap-3 md:grid-cols-4">
+          <div className="border-border mt-5 overflow-hidden rounded-lg border bg-white print:hidden">
+            <iframe
+              src="/diagrams/flujo-farmacias-vertical.html?theme=light"
+              title="Flujo Operativo y Contable — Farmacias Vertical"
+              className="h-[580px] w-full border-0 bg-white sm:h-[640px]"
+              loading="lazy"
+            />
+          </div>
+
+          <div className="mt-6 hidden gap-3 print:grid print:grid-cols-4">
             <div className="border-border bg-surface-muted/50 rounded-lg border p-4">
               <span className="text-primary font-mono text-xs font-bold">PASO 1 · CLIENTE</span>
               <h3 className="font-display text-ink mt-1 text-sm font-bold">
