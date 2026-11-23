@@ -6,6 +6,7 @@ import { WhatsAppButton } from '@/components/engagement/WhatsAppButton';
 import { AnnouncementBar } from '@/components/layout/AnnouncementBar';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
+import { StoreShell } from '@/components/layout/StoreShell';
 import { getAppConfig } from '@/lib/config/env';
 import { getCatalogRepository } from '@/lib/repositories';
 import './globals.css';
@@ -58,12 +59,19 @@ export default async function RootLayout({
     >
       <body className="bg-bg text-ink min-h-screen">
         <CartProvider>
-          <AnnouncementBar />
-          <Header categories={categories} />
-          <main className="min-h-[60vh]">{children}</main>
-          <Footer />
-          <CartDrawer />
-          <WhatsAppButton phoneNumber={config.NEXT_PUBLIC_WHATSAPP_NUMBER} />
+          <StoreShell
+            announcement={<AnnouncementBar />}
+            header={<Header categories={categories} />}
+            footer={<Footer />}
+            overlays={
+              <>
+                <CartDrawer />
+                <WhatsAppButton phoneNumber={config.NEXT_PUBLIC_WHATSAPP_NUMBER} />
+              </>
+            }
+          >
+            {children}
+          </StoreShell>
         </CartProvider>
       </body>
     </html>
