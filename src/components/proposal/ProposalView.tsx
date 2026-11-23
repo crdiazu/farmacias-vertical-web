@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -11,11 +12,15 @@ import {
   FileCheck2,
   Globe,
   Mail,
+  MapPin,
   MessageCircle,
+  Phone,
   Printer,
+  QrCode,
   ShieldCheck,
   Store,
   TrendingUp,
+  UserPlus,
 } from 'lucide-react';
 import { BrandLogo } from '@/components/layout/BrandLogo';
 import { Badge } from '@/components/ui/badge';
@@ -578,24 +583,157 @@ export function ProposalView() {
           </div>
         </section>
 
-        {/* Pie de propuesta */}
-        <footer className="border-border bg-surface flex flex-col items-start justify-between gap-4 rounded-[var(--radius-card)] border px-6 py-5 text-sm sm:flex-row sm:items-center">
-          <div>
-            <p className="font-display text-ink font-bold">Cristián Díaz · MarketingCloud Chile</p>
-            <p className="text-ink-muted text-xs">
-              Consultoría Tecnológica, Marketing Digital e IA · WhatsApp: +56 9 4943 8288
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-2 print:hidden">
-            <a
-              href="https://wa.me/56949438288?text=Hola%20Cristi%C3%A1n%2C%20agendemos%20la%20reuni%C3%B3n%20de%20trabajo%20para%20Farmacias%20Vertical."
-              target="_blank"
-              rel="noopener noreferrer"
-              className={buttonVariants({ variant: 'primary', size: 'sm' })}
-            >
-              <MessageCircle className="h-4 w-4" />
-              Coordinar Reunión por WhatsApp
-            </a>
+        {/* Tarjeta de Presentación Ejecutiva — Cristián Díaz */}
+        <footer className="border-border bg-surface overflow-hidden rounded-[var(--radius-card)] border shadow-[var(--shadow-card)] print:break-inside-avoid print:shadow-none">
+          <div className="from-ink via-secondary to-primary h-2 w-full bg-gradient-to-r" />
+          <div className="grid gap-8 p-6 sm:p-10 lg:grid-cols-12 lg:items-center">
+            <div className="space-y-6 lg:col-span-8">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
+                <div className="ring-primary/15 relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl border-2 border-white shadow-md ring-4 sm:h-32 sm:w-32">
+                  <Image
+                    src="/profile/cristian-diaz.png"
+                    alt="Cristián Díaz — MarketingCloud Chile"
+                    fill
+                    priority
+                    unoptimized
+                    sizes="128px"
+                    className="object-cover"
+                  />
+                </div>
+
+                <div className="space-y-1.5">
+                  <span className="bg-primary/10 text-primary inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-extrabold tracking-wider uppercase">
+                    Dirección de Proyecto &amp; Consultoría
+                  </span>
+                  <h2 className="font-display text-ink text-3xl font-extrabold tracking-tight sm:text-4xl">
+                    Cristián Díaz
+                  </h2>
+                  <p className="font-display text-secondary text-lg font-bold sm:text-xl">
+                    MarketingCloud Chile
+                  </p>
+                  <p className="text-ink-muted text-sm font-medium sm:text-base">
+                    Consultoría Tecnológica, Marketing Digital e Inteligencia Artificial
+                  </p>
+                </div>
+              </div>
+
+              <div className="border-border bg-surface-muted/40 grid gap-3 rounded-xl border p-4 sm:grid-cols-2 sm:p-5">
+                <a
+                  href="tel:+56949438288"
+                  className="hover:bg-surface flex items-center gap-3 rounded-lg p-1.5 transition-colors"
+                >
+                  <div className="bg-primary/15 text-primary flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+                    <Phone className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-ink-muted text-[11px] font-bold tracking-wider uppercase">
+                      WhatsApp &amp; Teléfono Directo
+                    </p>
+                    <p className="text-ink font-mono text-lg font-extrabold sm:text-xl">
+                      +56 9 4943 8288
+                    </p>
+                  </div>
+                </a>
+
+                <a
+                  href="https://marketingcloud.cl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:bg-surface flex items-center gap-3 rounded-lg p-1.5 transition-colors"
+                >
+                  <div className="bg-secondary/15 text-secondary flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+                    <Globe className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-ink-muted text-[11px] font-bold tracking-wider uppercase">
+                      Sitio Web Oficial
+                    </p>
+                    <p className="font-display text-secondary inline-flex items-center gap-1 text-lg font-extrabold hover:underline sm:text-xl">
+                      www.marketingcloud.cl
+                      <ExternalLink className="h-4 w-4" />
+                    </p>
+                  </div>
+                </a>
+
+                <a
+                  href="mailto:cristian@tecnovoa.cl"
+                  className="hover:bg-surface flex items-center gap-3 rounded-lg p-1.5 transition-colors"
+                >
+                  <div className="bg-surface text-ink flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+                    <Mail className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-ink-muted text-[11px] font-bold tracking-wider uppercase">
+                      Correo Corporativo
+                    </p>
+                    <p className="text-ink text-base font-bold sm:text-lg">cristian@tecnovoa.cl</p>
+                  </div>
+                </a>
+
+                <div className="flex items-center gap-3 rounded-lg p-1.5">
+                  <div className="bg-surface text-ink flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+                    <MapPin className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-ink-muted text-[11px] font-bold tracking-wider uppercase">
+                      Ubicación
+                    </p>
+                    <p className="text-ink text-base font-bold sm:text-lg">Santiago, Chile</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-3 print:hidden">
+                <a
+                  href="https://wa.me/56949438288?text=Hola%20Cristi%C3%A1n%2C%20agendemos%20la%20reuni%C3%B3n%20de%20trabajo%20para%20Farmacias%20Vertical."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={buttonVariants({ variant: 'primary', size: 'lg' })}
+                >
+                  <MessageCircle className="h-5 w-5" />
+                  Coordinar Reunión por WhatsApp
+                </a>
+                <a
+                  href="https://marketingcloud.cl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+                >
+                  <Globe className="h-5 w-5" />
+                  Visitar marketingcloud.cl
+                </a>
+                <a href="/api/vcard" className={buttonVariants({ variant: 'outline', size: 'lg' })}>
+                  <UserPlus className="text-primary h-5 w-5" />
+                  Guardar Contacto (.vcf)
+                </a>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center justify-center lg:col-span-4">
+              <div className="border-border w-full max-w-[240px] rounded-2xl border-2 bg-white p-5 text-center shadow-sm">
+                <div className="text-secondary mx-auto flex items-center justify-center gap-1.5 text-xs font-extrabold tracking-wider uppercase">
+                  <QrCode className="h-4 w-4" />
+                  Contacto en tu Celular
+                </div>
+                <div className="relative mx-auto mt-3 h-44 w-44">
+                  <Image
+                    src="/profile/qr-cristian-diaz.svg"
+                    alt="Código QR para guardar el contacto de Cristián Díaz"
+                    fill
+                    priority
+                    unoptimized
+                    sizes="176px"
+                    className="object-contain"
+                  />
+                </div>
+                <p className="font-display text-ink mt-3 text-sm font-extrabold">
+                  Escanea para guardar contacto
+                </p>
+                <p className="text-ink-muted mt-0.5 text-xs">
+                  Apunta con la cámara de tu iPhone o Android (vCard directa)
+                </p>
+              </div>
+            </div>
           </div>
         </footer>
       </main>
