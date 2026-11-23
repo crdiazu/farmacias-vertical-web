@@ -34,13 +34,26 @@ const config = getAppConfig();
 export const metadata: Metadata = {
   metadataBase: new URL(config.NEXT_PUBLIC_SITE_URL),
   title: {
-    default: 'Farmacias Vertical | Dermocosmética, Bienestar y Atención Farmacéutica en Chile',
+    default: 'Farmacias Vertical | Dermocosmética, Bienestar y Atención Farmacéutica',
     template: '%s | Farmacias Vertical',
   },
   description:
-    'Tienda online de Farmacias Vertical: dermocosmética, cuidado capilar, higiene, suplementos y orientación farmacéutica en Chile.',
+    'Tienda online de Farmacias Vertical en Chile: dermocosmética, cuidado capilar, higiene y orientación farmacéutica.',
   alternates: {
     canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'es_CL',
+    url: '/',
+    siteName: 'Farmacias Vertical',
+    title: 'Farmacias Vertical — Maqueta E-Commerce Chile',
+    description: 'Dermocosmética, cuidado personal, vitaminas y orientación farmacéutica en mesón.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Farmacias Vertical — Maqueta E-Commerce Chile',
+    description: 'Dermocosmética, cuidado personal, vitaminas y orientación farmacéutica en mesón.',
   },
 };
 
